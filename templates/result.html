@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<div class="container result-card">
+
+    <div class="icon">📊</div>
+
+    <h1>Prediction Result</h1>
+
+    {% if "Approved" in prediction %}
+
+    <div class="success">
+
+        ✅ {{ prediction }}
+
+    </div>
+
+    {% else %}
+
+    <div class="failure">
+
+        ❌ {{ prediction }}
+
+    </div>
+
+    {% endif %}
+
+    <a href="/" class="back-btn">
+
+        🔄 Predict Again
+
+    </a>
+
+</div>
+
+</body>
+
+</html>
